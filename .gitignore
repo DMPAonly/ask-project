@@ -1,2 +1,5 @@
 node_modules/
 Back-end/queries.sql
+Back-end/.env
+Front-end/.gitignore
+.DS_Store
