@@ -31,23 +31,49 @@ function AccountForm(props){
         props.inSubmit(inField.username, inField.password);
     }
 
-    return <div>
+    return <div className="accountform">
+        <div className="label-class">
     <form onSubmit={handleUpSubmit}>
-        <label htmlFor="email">Email: </label>
+        <div className="pad-class">
+        <h3>SignUp</h3>
+        <label htmlFor="email">Email </label>
+        <br></br>
         <input type="text" id="email" onChange={handleUpChange} name="email" value={upField.email} />
-        <label htmlFor="u-username">Username: </label>
+        </div>
+        <br></br>
+        <div className="pad-class">
+        <label htmlFor="u-username">Username </label>
+        <br></br>
         <input type="text" id="u-username" onChange={handleUpChange} name="username" value={upField.username} />
-        <label htmlFor="u-password">Password: </label>
+        </div>
+        <br></br>
+        <div className="pad-class">
+        <label htmlFor="u-password">Password </label>
+        <br></br>
         <input type="password" id="u-password" onChange={handleUpChange} name="password" value={upField.password} />
+        </div>
+        <br></br>
         <button type="submit">SignUp</button>
     </form>
+    <br></br>
+    <hr />
     <form onSubmit={handleInSubmit}>
-        <label htmlFor="i-username">Username: </label>
+        <div className="pad-class">
+        <h3>SignIn</h3>
+        <label htmlFor="i-username">Username </label>
+        <br></br>
         <input type="text" id="i-username" onChange={handleInChange} name="username" value={inField.username} />
-        <label htmlFor="i-password">Password: </label>
+        </div>
+        <br></br>
+        <div className="pad-class">
+        <label htmlFor="i-password">Password </label>
+        <br></br>
         <input type="password" id="i-password" onChange={handleInChange} name="password" value={inField.password} />
+        </div>
+        <br></br>
         <button type="submit">SignIn</button>
     </form>
+    </div>
     </div>
 }
 

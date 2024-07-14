@@ -14,11 +14,19 @@ function AnswerForm(props){
         props.submitAnswer(answer);
     }
 
+    function handleCancel(){
+        props.handleCancel();
+    }
+
     return <div>
-        <form onSubmit={handleSubmit}>
+        <form className="answer-form" onSubmit={handleSubmit}>
             <label htmlFor="answer">Type your answer: </label>
-            <textarea id="answer" rows="50" cols="50" name="answer" onChange={changeAnswer} value={answer}/>
-            <button type="submit">Submit Answer</button>
+            <br></br>
+            <br></br>
+            <textarea id="answer" rows="50" cols="50" name="answer" onChange={changeAnswer} value={answer} placeholder="Type your answer here..."/>
+            <br></br>
+            <button type="submit" className="primary-btn">Submit Answer</button>
+            <button type="reset" onClick={handleCancel} className="primary-btn position-btn">Cancel</button>
         </form></div>
 }
 

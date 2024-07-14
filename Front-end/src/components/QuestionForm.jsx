@@ -15,11 +15,13 @@ function QuestionForm(props){
         console.log(query);
     }
 
-    return <div>
-        <form onSubmit={handleSubmit}>
+    return <div className="home-page-container">
+        <form className="question-form" onSubmit={handleSubmit}>
             <label htmlFor="query">Write your question:</label>
-            <textarea id="query" rows="2" cols="20" onChange={handleChange} name="question" value={query}></textarea>
-            <button type="submit">Submit Query</button>
+            <br></br>
+            <br></br>
+            <textarea id="query" onChange={handleChange} name="question" value={query} placeholder="Type your question here...."></textarea>
+            <button type="submit">+</button>
         </form>
     </div>
 }

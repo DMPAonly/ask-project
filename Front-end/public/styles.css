@@ -1,0 +1,165 @@
+body{
+  background-color: #d1e3ec;
+}
+
+#root{
+  min-height: 100vh;
+  position: relative;
+}
+
+Footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p{
+  text-align: center;
+}
+
+.accountform{
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  padding-bottom: 20px;
+  background-color: aliceblue;
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 8px grey;
+}
+
+.label-class{
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input{
+  border: 0px;
+  border-radius: 2px;
+  background-color: rgb(227, 227, 227);
+  box-shadow: 2px 2px 2px grey inset;
+}
+
+.label-class button{
+  background-color: #4535C1;
+  padding: 3px;
+  border: 0px;
+  border-radius: 2px;
+  color: azure;
+}
+
+.label-class button:hover{
+  background-color: #726bac;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page{
+  width: 50%;
+  background-color: aliceblue;
+  padding: 15px;
+  box-shadow: 5px 10px 8px grey;
+  border-radius: 10px;
+}
+
+.home-page-container{
+  margin: auto;
+}
+
+.question-form button{
+  border: 0px;
+  border-radius: 50%;
+  padding: 5px 20px;
+  background-color: #29b7cf;
+  color: white;
+  font-size: 50px;
+  box-shadow: 2px 4px #526d72;
+  position: relative;
+  left: 20px;
+  bottom: 25px;
+}
+
+.question-form button:hover{
+  background-color: #206f7d;
+}
+
+.question-form textarea{
+  width: 80%;
+  height: 100px;
+  resize: none;
+  padding: 5px;
+}
+
+.author-container{
+  text-align: right;
+  color: #726bac;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.primary-btn{
+  background-color: #6e9de3;
+  border: 0px;
+  border-radius: 5%;
+  color: white;
+  padding: 5px;
+}
+
+.primary-btn:hover{
+  background-color: #506788;
+}
+
+.answer-form textarea{
+  width: 95%;
+  height: 100px;
+  resize: none;
+}
+
+.position-btn{
+  margin-left: 10px;
+}
+
+.answer-page{
+  width: 50%;
+  background-color: aliceblue;
+  padding: 15px;
+  box-shadow: 5px 10px 8px grey;
+  border-radius: 10px;
+}
+
+#header-question{
+  position: sticky;
+}
+
+.comment-section{
+  width: 60%;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.secondary-btn{
+  background-color: rgb(209, 209, 209);
+  border: 0px;
+  padding: 7px;
+  border-radius: 3px;
+  color: blue;
+}
+
+.secondary-btn:hover{
+  color: red;
+}

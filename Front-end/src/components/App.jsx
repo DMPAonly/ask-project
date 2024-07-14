@@ -6,14 +6,15 @@ import QuestionForm from "./QuestionForm";
 import AccountForm from "./AccountForm";
 import AnswerPage from "./AnswerPage";
 import HeaderQuestion from "./HeaderQuestion";
+import Footer from "./Footer";
 
-function App(props){
+function App(){
     const API_URL = "http://localhost:3000";
 
     const [posts, setPosts] = useState([]);
     const [answerResponse, setAnswerResponse] = useState([]);
     const [commentResponse, setCommnetResponse] = useState([]);
-    const [sign, setSign] = useState(false);
+    const [sign, setSign] = useState(true);
     const [user, setUser] = useState("");
     const [clickShowAnswer, setClickShowAnswer] = useState(false);
 
@@ -147,10 +148,12 @@ function App(props){
 
     return  <div>
                 {sign ? 
-                <div>
+                <div className="flex-container">
                     {!clickShowAnswer ? 
-                    <div>
+                    <div className="home-page">
                         <QuestionForm addPost={addPosts}/>
+                        <br></br>
+                        <hr></hr>
                         {posts.map((post) => {
                             return <Post 
                             key={post.question_id} 
@@ -161,7 +164,7 @@ function App(props){
                             showAnswer={getAnswer}/>
                         })}
                     </div> : 
-                    <div>
+                    <div className="answer-page">
                         <button type="button" onClick={handleBack}>Back to Home</button>
                         <HeaderQuestion header={answerResponse}/>
                         {answerResponse.map((answer)=> {
@@ -179,6 +182,7 @@ function App(props){
                 </div> :
                 <AccountForm upSubmit={signUp} inSubmit={signIn}/>
                 }
+                <Footer />
             </div>
 }
 

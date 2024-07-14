@@ -22,20 +22,20 @@ function AnswerPage(props){
     }
 
     return <div>
-            <h2>{props.answer}</h2>
-            <p>by {props.a_author}</p>
+            <p>{props.answer}</p>
+            <p className="author-container">Answered by - {props.a_author}</p>
             {!clickGiveComment ? 
             <div>
                 {!clickShowComment ? 
                 <div>
-                    <button type="button" onClick={handleShowComment}>Show comments</button>
-                    <button type="button" onClick={handleGiveComment}>Comment</button>
+                    <button type="button" onClick={handleShowComment} className="primary-btn">Show comments</button>
+                    <button type="button" onClick={handleGiveComment} className="primary-btn position-btn">Comment</button>
                 </div> : 
-                <div>
-                    <button type="button" onClick={() => {
+                <div className="comment-section">
+                    <button type="button" className="secondary-btn" onClick={() => {
                         setClickShowComment(!clickShowComment);
                         console.log(props.comments);
-                    }}>cross</button>
+                    }}><u>Close</u></button>
                     {props.comments.map((comment, index) => {
                         return<CommentSection 
                         key={index} 
@@ -48,6 +48,7 @@ function AnswerPage(props){
             <CommentForm handleSubmit={handleCommentSubmit}/>
             }
             <br></br>
+            <hr></hr>
     </div>
 }
 

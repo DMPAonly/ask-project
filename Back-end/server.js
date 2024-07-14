@@ -54,21 +54,26 @@ app.post("/signUp", async(req, res) => {
         const email = req.body.email;
         const username = req.body.username;
         const password = req.body.password;
-        const data = await db.query("SELECT * FROM accounts WHERE username = $1", [username]);
-        if(data.rows.length === 0){
-            const data = await db.query("SELECT * FROM accounts WHERE email = $1", [email]);
-            if(data.rows.length === 0){
-                const data = await db.query("INSERT INTO accounts (email, username, password) VALUES($1, $2, $3)", [email, username, password]);
-                res.send(true); 
-            } else{
-                res.send("Email already in use.");
-            }
+        console.log('email:'+email+'username:'+username+'password:'+password);
+        if(username === '' || email === '' || password === ''){
+            throw "Enter all fields";
         } else{
-            res.send("Username is already taken.");
+            const data = await db.query("SELECT * FROM accounts WHERE username = $1", [username]);
+            if(data.rows.length === 0){
+                const data = await db.query("SELECT * FROM accounts WHERE email = $1", [email]);
+                if(data.rows.length === 0){
+                    const data = await db.query("INSERT INTO accounts (email, username, password) VALUES($1, $2, $3)", [email, username, password]);
+                    res.send(true); 
+                } else{
+                    res.send("Email already in use.");
+                }
+            } else{
+                res.send("Username is already taken.");
+            }
         }
     } catch(error){
         console.error(error);
-        res.sendStatus(500);
+        res.send(error);
     }
 })
 
