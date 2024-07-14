@@ -35,7 +35,9 @@ function AccountForm(props){
         <div className="label-class">
     <form onSubmit={handleUpSubmit}>
         <div className="pad-class">
-        <h3>SignUp</h3>
+        <h1>Ask_project ?</h1>
+        <br></br>
+        <h2>SignUp</h2>
         <label htmlFor="email">Email </label>
         <br></br>
         <input type="text" id="email" onChange={handleUpChange} name="email" value={upField.email} />
@@ -53,13 +55,13 @@ function AccountForm(props){
         <input type="password" id="u-password" onChange={handleUpChange} name="password" value={upField.password} />
         </div>
         <br></br>
-        <button type="submit">SignUp</button>
+        <button type="submit" className="primary-btn">SignUp</button>
     </form>
     <br></br>
     <hr />
     <form onSubmit={handleInSubmit}>
         <div className="pad-class">
-        <h3>SignIn</h3>
+        <h2>SignIn</h2>
         <label htmlFor="i-username">Username </label>
         <br></br>
         <input type="text" id="i-username" onChange={handleInChange} name="username" value={inField.username} />
@@ -71,7 +73,7 @@ function AccountForm(props){
         <input type="password" id="i-password" onChange={handleInChange} name="password" value={inField.password} />
         </div>
         <br></br>
-        <button type="submit">SignIn</button>
+        <button type="submit" className="primary-btn">SignIn</button>
     </form>
     </div>
     </div>

@@ -13,11 +13,16 @@ function CommentForm(props){
         props.handleSubmit(comment);
     }
 
-    return <div>
+    function handleCancel(){
+        props.handleCancel();
+    }
+
+    return <div className="comment-form">
         <form onSubmit={handleSubmit}>
             <label htmlFor="feedback">Write a comment: </label>
-            <textarea id="feedback" rows="50" cols="100" onChange={handleChange}/>
-            <button type="submit">Post Comment</button>
+            <textarea id="feedback" onChange={handleChange} placeholder="Type your comment here..."/>
+            <button type="submit" className="primary-btn">Post Comment</button>
+            <button type="reset" onClick={handleCancel} className="primary-btn position-btn">Cancel</button>
         </form>
     </div>
 }

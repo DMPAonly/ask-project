@@ -21,6 +21,10 @@ function AnswerPage(props){
         setClickGiveComment(!clickGiveComment);
     }
 
+    function hideComment(){
+        setClickGiveComment(false);
+    }
+
     return <div>
             <p>{props.answer}</p>
             <p className="author-container">Answered by - {props.a_author}</p>
@@ -35,7 +39,7 @@ function AnswerPage(props){
                     <button type="button" className="secondary-btn" onClick={() => {
                         setClickShowComment(!clickShowComment);
                         console.log(props.comments);
-                    }}><u>Close</u></button>
+                    }}>Close</button>
                     {props.comments.map((comment, index) => {
                         return<CommentSection 
                         key={index} 
@@ -45,7 +49,7 @@ function AnswerPage(props){
                 </div>
                 } 
             </div> : 
-            <CommentForm handleSubmit={handleCommentSubmit}/>
+            <CommentForm handleSubmit={handleCommentSubmit} handleCancel={hideComment}/>
             }
             <br></br>
             <hr></hr>

@@ -7,6 +7,7 @@ import AccountForm from "./AccountForm";
 import AnswerPage from "./AnswerPage";
 import HeaderQuestion from "./HeaderQuestion";
 import Footer from "./Footer";
+import HeadBar from "./HeadBar";
 
 function App(){
     const API_URL = "http://localhost:3000";
@@ -14,7 +15,7 @@ function App(){
     const [posts, setPosts] = useState([]);
     const [answerResponse, setAnswerResponse] = useState([]);
     const [commentResponse, setCommnetResponse] = useState([]);
-    const [sign, setSign] = useState(true);
+    const [sign, setSign] = useState(false);
     const [user, setUser] = useState("");
     const [clickShowAnswer, setClickShowAnswer] = useState(false);
 
@@ -142,6 +143,11 @@ function App(){
         setClickShowAnswer(false);
     }
 
+    function loggingOut(){
+        setSign(false);
+        setUser("");
+    }
+
     useEffect(() => {
         fetchPosts();
     }, [sign]);
@@ -149,6 +155,7 @@ function App(){
     return  <div>
                 {sign ? 
                 <div className="flex-container">
+                    <HeadBar user={user} logOut={loggingOut}/>
                     {!clickShowAnswer ? 
                     <div className="home-page">
                         <QuestionForm addPost={addPosts}/>
@@ -165,7 +172,8 @@ function App(){
                         })}
                     </div> : 
                     <div className="answer-page">
-                        <button type="button" onClick={handleBack}>Back to Home</button>
+                        <button type="button" onClick={handleBack} className="secondary-btn">Back to Home</button>
+                        <br></br>
                         <HeaderQuestion header={answerResponse}/>
                         {answerResponse.map((answer)=> {
                             return <AnswerPage 
